@@ -1,0 +1,21 @@
+.show-more-btn {
+  border-radius: 5px;
+  color: var(--Primary-Colors-White, #FFF);
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  width: 502px;
+  height: 50px;
+  background-color: #2196F3;
+  &:hover {
+    cursor: pointer
+  }
+}
+.flights-info__data {
+  margin-bottom: 20px;
+}
