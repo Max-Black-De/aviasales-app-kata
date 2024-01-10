@@ -11,7 +11,6 @@ export const sortBtnsSlice = createSlice({
   },
   reducers: {
     sortTickets: (state, action) => {
-      console.log(action)
       switch (action.payload.name) {
         case 'FAST':
           state.filter = {

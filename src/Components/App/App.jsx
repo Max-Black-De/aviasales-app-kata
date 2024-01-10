@@ -14,7 +14,7 @@ function App() {
   
   return (
     <div className={styles.App}>
-      <div className='App-wrapper'>
+      <div className={styles['App-wrapper']}>
         <Header />
         <AllContent />
       </div>

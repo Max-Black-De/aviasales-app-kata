@@ -46,7 +46,35 @@ function FlightsData() {
             </ul>
   }
 
-  useEffect(() => sortingFlyingsData(cheapest, faster, optimal), [all, no, one, two, three, cheapest, faster, optimal])
+  useEffect(() => {
+    const sortingByCheckBox = (arrData, connectValues, filterFn) => {
+      if(!all) {
+        arrData = arrData.filter((ticket) => {
+          return ticket.segments.every((segment) => {
+            return connectValues[segment.stops.length]
+          })
+        })
+        filterFn(arrData)
+      } else filterFn([...ticketsData])
+    }
+    const sortingFlyingsData = (cheapest, faster, optimal) => {
+      const connectValues = Object.values({
+        no,
+        one,
+        two,
+        three
+      })
+      let arrData = [...ticketsData]
+      if(cheapest) {
+        sortingByCheckBox(arrData, connectValues, filterByCost)
+      } else if(faster) {
+        sortingByCheckBox(arrData, connectValues, filterByDuration)
+      } else if (optimal) {
+        sortingByCheckBox(arrData, connectValues, setCheckedData)
+      } else setCheckedData(ticketsData)
+    }
+    sortingFlyingsData(cheapest, faster, optimal)
+  }, [all, no, one, two, three, cheapest, faster, optimal, ticketsData])
 
   const addFiveTickets = () => {
     setEnd((prevEnd) => prevEnd + 5)
@@ -63,33 +91,6 @@ function FlightsData() {
       b.segments[1].duration
     )
     setCheckedData(fastArr)
-  }
-  const sortingByCheckBox = (arrData, connectValues, filterFn) => {
-    if(!all) {
-      arrData = arrData.filter((ticket) => {
-        return ticket.segments.every((segment) => {
-          return connectValues[segment.stops.length]
-        })
-      })
-      filterFn(arrData)
-    } else filterFn([...ticketsData])
-  }
-  const sortingFlyingsData = (cheapest, faster, optimal) => {
-    const connectValues = Object.values({
-      no,
-      one,
-      two,
-      three
-    })
-    let arrData = [...ticketsData]
-
-    if(cheapest) {
-      sortingByCheckBox(arrData, connectValues, filterByCost)
-    } else if(faster) {
-      sortingByCheckBox(arrData, connectValues, filterByDuration)
-    } else if (optimal) {
-      sortingByCheckBox(arrData, connectValues, setCheckedData)
-    } else setCheckedData(ticketsData)
   }
 
   return (

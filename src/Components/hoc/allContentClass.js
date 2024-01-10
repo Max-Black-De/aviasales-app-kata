@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const allContentClass = (Component, className) => {
   return (props) => {
@@ -11,3 +12,7 @@ const allContentClass = (Component, className) => {
 }
 
 export default allContentClass
+
+allContentClass.propTypes = {
+    className: PropTypes.string.isRequired,
+};
