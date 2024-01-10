@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Link to Aviasales application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Open link to review my Aviasales App [Aviasales React App Kata]((https://aviasales-app-kata-alpha.vercel.app/).
 
 ## Available Scripts
 
