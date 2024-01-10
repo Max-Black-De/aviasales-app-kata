@@ -1,6 +1,6 @@
 # Link to Aviasales application
 
-Open link to review my Aviasales App [Aviasales React App Kata](https://aviasales-app-kata-alpha.vercel.app).
+Open link to review my [Aviasales React App Kata](https://aviasales-app-kata-alpha.vercel.app).
 
 ## Available Scripts
 
