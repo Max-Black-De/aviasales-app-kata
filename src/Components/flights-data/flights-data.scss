@@ -1,0 +1,41 @@
+$shw-more-btn-txt: #FFF;
+$background-shw-more-btn-txt: #2196F3;
+$nfo-block-txt: #e6f4ff;
+$nfo-block-brdr: #91caff;
+
+.show-more-btn {
+	border-radius: 5px;
+	color: $shw-more-btn-txt;
+	text-align: center;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	width: 502px;
+	height: 50px;
+	background-color: $background-shw-more-btn-txt;
+	&:hover {
+		cursor: pointer;
+	}
+}
+.show-more-info-block {
+	background: $nfo-block-txt;
+	border: 1px solid $nfo-block-brdr;
+	border-radius: 6px;
+	width: 502px;
+	height: 50px;
+	text-align: center;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+}
+.flights-info__data {
+	margin-bottom: 20px;
+}
+.flights-data__footer {
+	margin: 20px 0;
+}
+

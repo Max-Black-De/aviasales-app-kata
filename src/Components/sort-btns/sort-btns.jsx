@@ -1,21 +1,15 @@
 import styles from './sort-btns.module.scss'
 
 import { useSelector, useDispatch } from 'react-redux';
-import { sortTickets } from '../../store/filter/filterSlice'
-
-
+import { sortTickets } from '../../store/slices/sortBtnsSlice';
 
 function SortBtns() {
-  // const classNames = require('classnames');
-  const toggle = useSelector((state) => state.filter.params)
+  const toggle = useSelector((state) => state.filter.filter)
   const { cheapest, faster, optimal } = toggle
   const dispatch = useDispatch()
   const onSelectSort = (e) => {
     const { name } = e.target
-    // const payload = {
-    //   name,
-    // }
-    dispatch(sortTickets(name))
+    dispatch(sortTickets({ name }))
   }
   
   return (

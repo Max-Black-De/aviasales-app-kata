@@ -1,23 +1,17 @@
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchTicketsData } from '../../store/apiTicketsService/apiTicketsService';
 import { Header } from '../app-header'
 import { AllContent } from '../main-content'
 
 import './App.scss';
 
 function App() {
-
-  // async function getId (){
-  //   const res = await fetch('https://aviasales-test-api.kata.academy/search')
-  //   const body = await res.json()
-  //   console.log(body)
-  //   return body.searchId
-  // };
-  // async function getTickets (){
-  //   const id = await getId()
-  //   const res = await fetch(`https://aviasales-test-api.kata.academy/tickets?searchId=${id}`)
-  //   const body = await res.json()
-  //   console.log(body.tickets)
-  // };
-  // getTickets()
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchTicketsData())
+  }, [dispatch])
+  
   return (
     <div className="App">
       <div className='App-wrapper'>

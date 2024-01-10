@@ -1,25 +1,24 @@
 import './flight-card.scss'
+import { v4 as key } from 'uuid';
+import { FlightRoutInfo } from '../flight-rout-info';
 
-// import s7airlinesLogo from '../../images/s7airlinesLogo.svg'
-import {FlightRoutInfo} from '../flight-rout-info';
-
-const airLogoLink = 'https://pics.avs.io/99/36/FV.png'
-
-
-function FlightCard() {
-  return(
+function FlightCard({ price, carrier, segments}) {
+  return (
     <li className='flights-body__item flight-card'>
       <div className='flight-body_priceLogo'>
-        <h1 className='flight-prise'>13 400 ₽</h1>
-        <img className='company-logo' src={airLogoLink} alt='air company logo'></img>
+        <h1 className='flight-prise'>{price.toLocaleString('Ru-ru')} ₽</h1>
+        <img className='company-logo' src={`https://pics.avs.io/99/36/${carrier}.png`} alt='air company logo'></img>
       </div>
 
       <div className='flight-body__rout'>
-        <FlightRoutInfo />
-        <FlightRoutInfo />
+        {segments.map(segment => (
+          <FlightRoutInfo key={key()} {...segment}/>
+        ))
+        }
       </div>
     </li>
   )
+
 };
 
 export default FlightCard;

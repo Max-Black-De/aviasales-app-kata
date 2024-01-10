@@ -1,0 +1,24 @@
+$top-details: #A0B0B9;
+$bottom-details: #4A4A4A;
+
+.flight-details {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	margin-bottom: 10px;
+	&__top {
+		color: $top-details;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 18px;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+	}
+	&__bottom {
+		color: $bottom-details;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 21px;
+	}
+}

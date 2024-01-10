@@ -1,54 +1,62 @@
+$f-box-bgnd: #FFFF;
+$bx-shadow: #0000001a;
+$f-box-text: #4A4A4A;
+$checkbox-bgnd: #F1FCFF;
+
 .filter-box {
-  border-radius: 5px;
-  background: #FFF;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.10);
-  width: 232px;
-  height: max-content;
-}
-.filter-box__title {
-  margin-top: 20px;
-  color: #4A4A4A;
-  font-family: Open Sans;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 12px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-.filter-box__checkbox {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  margin: 10px 0;
-}
-// .filter-box__checkbox > label{
-//   display: flex;
-//   align-items: center;
-// }
-.filter-box__checkbox-item {
-  display: flex;
-  width: 100%;
-  height: 40px;
-  flex-shrink: 0;
-  align-items: center;
-  &:hover {
-    background: #F1FCFF;
-    color: #4A4A4A;
-  }
+	border-radius: 5px;
+	background: $f-box-bgnd;
+	box-shadow: 0px 2px 8px 0px $bx-shadow;
+	width: 232px;
+	height: max-content;
+	margin-right: 20px;
+	&__title {
+		margin-top: 20px;
+		color: $f-box-text;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 12px;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+	}
+	&__checkbox {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		margin: 10px 0;
+		&-item {
+			display: flex;
+			width: 100%;
+			height: 40px;
+			flex-shrink: 0;
+			align-items: center;
+			color: $f-box-text;
+			font-size: 13px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 20px;
+      &:hover {
+        background: $checkbox-bgnd;
+        color: $f-box-text;
+      }
+		}
+	}
+	&__span-item {
+		width: 20px;
+		height: 20px;
+		margin: 0 10px 0 20px;
+		background-image: url('../../images/checkBoxOff.svg');
+	}
 }
 input {
-  color: #9ABBCE;
-  margin: 0 10px 0 20px;
-  width: 20px;
-  height: 20px;
+  appearance: none;
   &:checked {
-    background-color: #F1FCFF
-    // background-color: #2196F3; 
+    & + .filter-box__span-item {
+      background-image: url('../../images/checkBoxOn.svg');
+    }
   }
 }
-input,
-.filter-box__checkbox-item,
-.filter-box__checkbox-item > label:hover {
-  cursor: pointer;
+input, .filter-box__checkbox-item, .filter-box__checkbox-item > label:hover {
+	cursor: pointer;
 }

@@ -1,5 +1,6 @@
-$text-color: #FFFF;
-$font-family_1: Open Sans;
+$active-btn-text-color: #FFFF;
+$btn-text-color: #4A4A4A;
+// $font-family_1: Open Sans, system-ui;
 $background-color_active: #2196F3;
 $background-btns-color: #FFFF;
 $border-color: #DFE5EC;
@@ -23,25 +24,25 @@ $border-color: #DFE5EC;
 .sort-buttons__item {
 	flex-grow: 1;
 }
-
 .sort-button {
 	width: 100%;
 	height: 100%;
 	background: $background-btns-color;
 	border: solid 1px $border-color;
+	color: $btn-text-color;
 	text-align: center;
-	font-family: $font-family_1;
+	// font-family: $font-family_1;
 	font-size: 12px;
 	font-style: normal;
 	font-weight: 600;
 	line-height: 20px;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
-	&:hover {
-		cursor: pointer;
-	}
+		&:hover {
+			cursor: pointer;
+		}
 }
 .active {
-	color: $text_color;
+	color: $active-btn-text-color;
 	background-color: $background-color_active;
 }

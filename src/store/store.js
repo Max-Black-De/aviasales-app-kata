@@ -1,9 +1,13 @@
-import { configureStore } from "@reduxjs/toolkit";
-import filterReducer from '../store/filter/filterSlice'
-
-
-export const store = configureStore({
-  reducer: {
-    filter: filterReducer},
-  devTools: true,
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import sortBtsReducer from './slices/sortBtnsSlice'
+import ticketsReducer from "./slices/ticketsSlice";
+import checkBoxReducer from "./slices/checkBoxSlice";
+const rootReducer = combineReducers({
+  filter: sortBtsReducer,
+  check: checkBoxReducer,
+  tickets: ticketsReducer
 })
+export const store = configureStore({
+  reducer: rootReducer,
+})
+
