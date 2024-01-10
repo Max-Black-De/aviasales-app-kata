@@ -1,18 +1,15 @@
-import './main-content.scss';
+import styles from './main-content.module.scss';
 import { Result } from 'antd';
 import { FilterBox } from '../filter-box';
 import { FlightsData } from '../flights-data';
 import allContentClass from '../hoc/allContentClass';
 import { Offline, Online } from "react-detect-offline";
 
-
-
-
 function AllContent() {
   return (
     <>
       <Online >
-        <div className='App__content-wrapper'>
+        <div className={styles['App__content-wrapper']}>
           <FilterBox />
           <FlightsData />
         </div>
@@ -28,4 +25,4 @@ function AllContent() {
   );
 }
 
-export default allContentClass(AllContent, 'App__content');
+export default allContentClass(AllContent, styles['App__content']);

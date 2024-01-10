@@ -4,7 +4,7 @@ import { fetchTicketsData } from '../../store/apiTicketsService/apiTicketsServic
 import { Header } from '../app-header'
 import { AllContent } from '../main-content'
 
-import './App.scss';
+import styles from './App.module.scss';
 
 function App() {
   const dispatch = useDispatch()
@@ -13,7 +13,7 @@ function App() {
   }, [dispatch])
   
   return (
-    <div className="App">
+    <div className={styles.App}>
       <div className='App-wrapper'>
         <Header />
         <AllContent />

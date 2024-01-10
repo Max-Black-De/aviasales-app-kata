@@ -21,23 +21,19 @@ export const ticketsSlice = createSlice({
       fetchTicketsData.pending, (state, action) => {
         state.tickets.status = 'LOADING'
         state.tickets.error = null
-        console.log(action)
       })
       builder.addCase(
         fetchTicketsData.fulfilled, (state, action) => {
           state.tickets.ticketsData = action.payload.tickets
           state.tickets.stop = action.payload.stop
           state.tickets.status = 'RESOLVED'
-          console.log(action)
       })
       builder.addCase(
         fetchTicketsData.rejected, (state, action) => {
-          console.log(action)
           state.tickets.error = true
       }
     )
   }
-
 })
 
 export const { setTicketsData } = ticketsSlice.actions

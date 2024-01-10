@@ -2,18 +2,6 @@ $flght-crd-shdw: #0000001a;
 $flght-crd-bgnd: #FFF;
 $flght-prc-text: #2196F3;
 
-.flight-body_priceLogo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.flight-prise {
-  color: $flght-prc-text;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-}
 .flight-card {
   border-radius: 5px;
   background-color: $flght-crd-bgnd;
@@ -21,5 +9,17 @@ $flght-prc-text: #2196F3;
   text-align: start;
   padding: 20px;
   padding-bottom: 10px;
-  margin-top: 20px
+  margin-top: 20px;
+  &-prise {
+    color: $flght-prc-text;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+  }
+  &_priceLogo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
 }

@@ -1,4 +1,4 @@
-import './flight-rout-info.scss'
+import style from './flight-rout-info.module.scss'
 import { format } from 'date-fns';
 
 function FlightRoutInfo({ origin, destination, date, duration, stops }) {
@@ -23,18 +23,18 @@ function FlightRoutInfo({ origin, destination, date, duration, stops }) {
   }
 
   return (
-    <ul className='flight-details'>
-      <li className='flight-details__rout'>
-        <p className='flight-details__duration-place flight-details__top'>{origin} – {destination}</p>
-        <p className='flight-details__duration-hours flight-details__bottom'>{getRouteTimes()}</p>
+    <ul className={style['flight-details']}>
+      <li className={style['flight-details__rout']}>
+        <p className={style['flight-details__top']}>{origin} – {destination}</p>
+        <p className={style['flight-details__bottom']}>{getRouteTimes()}</p>
       </li>
-      <li className='flight-details__duration'>
-        <p className='flight-details__duration-tittle flight-details__top'>В пути</p>
-        <p className='flight-details__duration-time flight-details__bottom'>{hours}ч {minutes}м </p>
+      <li className={style['flight-details__duration']}>
+        <p className={style['flight-details__top']}>В пути</p>
+        <p className={style['flight-details__bottom']}>{hours}ч {minutes}м </p>
       </li>
-      <li className='flight-details__stops'>
-        <p className='flight-details__stops-tittle flight-details__top'> {stops.length !== 0 ? stops.length : null} {text()}</p>
-        <p className='flight-details__stops-city flight-details__bottom'>{stop}</p>
+      <li className={style['flight-details__stops']}>
+        <p className={style['flight-details__top']}> {stops.length !== 0 ? stops.length : null} {text()}</p>
+        <p className={style['flight-details__bottom']}>{stop}</p>
       </li>
     </ul>
   )

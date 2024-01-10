@@ -1,4 +1,4 @@
-import './flights-data.scss';
+import style from './flights-data.module.scss';
 import { SortBtnsList } from '../sort-btns';
 import { FlightCard } from '../flight-card';
 import { useSelector } from 'react-redux';
@@ -19,11 +19,11 @@ function FlightsData() {
 
   const btnOrDiv = () => {
     if((!all && !no && !one && !two && !three) || status === 'LOADING') {
-      return  <div className='show-more-info-block'>
+      return  <div className={style['show-more-info-block']}>
                 Выберите фильтры для получения информации об интересующих вас рейсах
               </div>
     }
-      return  <button onClick={addFiveTickets} className='show-more-btn'>
+      return  <button onClick={addFiveTickets} className={style['show-more-btn']}>
                 Показать еще 5 билетов!
               </button>
   }
@@ -32,10 +32,11 @@ function FlightsData() {
     if(error) {
       return  <Result
                 status="404"
-                title="Sorry, something went wrong."
+                title="Sorry."
+                subTitle="Something went wrong, please reload your page."
               />
     }
-    return  <ul className='flights-data__body'>
+    return  <ul className={style['flights-data__body']}>
               {(checkedData.slice(0, end)).map((elem) => (
                 <FlightCard key={uuid()}
                   {...elem}
@@ -92,12 +93,12 @@ function FlightsData() {
   }
 
   return (
-    <main className='flights-data'>
-      <header className='flights-data__header'>
+    <main className={style['flights-data']}>
+      <header className={style['flights-data__header']}>
         <SortBtnsList />
       </header>
       {errorStat()}
-      <footer className='flights-data__footer'>
+      <footer className={style['flights-data__footer']}>
       {!error ? btnOrDiv() : null}
       </footer>
     </main>

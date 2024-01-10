@@ -49,7 +49,7 @@ $checkbox-bgnd: #F1FCFF;
 		background-image: url('../../images/checkBoxOff.svg');
 	}
 }
-input {
+.box-input {
   appearance: none;
   &:checked {
     & + .filter-box__span-item {
@@ -57,6 +57,8 @@ input {
     }
   }
 }
-input, .filter-box__checkbox-item, .filter-box__checkbox-item > label:hover {
+.box-input,
+.filter-box__checkbox-item,
+.filter-box__checkbox-item > label:hover {
 	cursor: pointer;
 }

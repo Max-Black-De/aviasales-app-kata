@@ -1,0 +1,9 @@
+$font-family_1: Open Sans, system-ui;
+$app-bgnd: #F3F7FA;
+
+.App {
+	text-align: center;
+	background: $app-bgnd;
+	min-height: 100vh;
+	font-family: $font-family_1;
+}

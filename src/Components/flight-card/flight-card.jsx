@@ -1,16 +1,16 @@
-import './flight-card.scss'
+import style from './flight-card.module.scss'
 import { v4 as key } from 'uuid';
 import { FlightRoutInfo } from '../flight-rout-info';
 
 function FlightCard({ price, carrier, segments}) {
   return (
-    <li className='flights-body__item flight-card'>
-      <div className='flight-body_priceLogo'>
-        <h1 className='flight-prise'>{price.toLocaleString('Ru-ru')} ₽</h1>
-        <img className='company-logo' src={`https://pics.avs.io/99/36/${carrier}.png`} alt='air company logo'></img>
+    <li className={style['flight-card']}>
+      <div className={style['flight-card_priceLogo']}>
+        <h1 className={style['flight-card-prise']}>{price.toLocaleString('Ru-ru')} ₽</h1>
+        <img className={style['company-logo']} src={`https://pics.avs.io/99/36/${carrier}.png`} alt='air company logo'></img>
       </div>
 
-      <div className='flight-body__rout'>
+      <div className={style['flight-body__rout']}>
         {segments.map(segment => (
           <FlightRoutInfo key={key()} {...segment}/>
         ))

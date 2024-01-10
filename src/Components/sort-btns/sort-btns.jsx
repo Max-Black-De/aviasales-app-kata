@@ -18,21 +18,21 @@ function SortBtns() {
       <button
         name='FAST'
         onClick={(e) => onSelectSort(e)}
-        className={[styles['sort-button_cheapest'], styles['sort-button'], styles[cheapest ? 'active' : '']].join(' ')}
+        className={[styles['cheapest'], styles['sort-button'], styles[cheapest ? 'active' : '']].join(' ')}
       >Самый дешевый</button>
     </li>
     <li className={styles['sort-buttons__item']}>
       <button
         name='CHEAP'
         onClick={(e) => onSelectSort(e)}
-        className={[styles['sort-button_fast'], styles['sort-button'], styles[faster ? 'active' : '']].join(' ')}
+        className={[styles['fast'], styles['sort-button'], styles[faster ? 'active' : '']].join(' ')}
       >Самый быстрый</button>
     </li>
     <li className={styles['sort-buttons__item']}>
       <button
         name='OPTIMAL'
         onClick={(e) => onSelectSort(e)}
-        className={[styles['sort-button_optimal'], styles['sort-button'], styles[optimal ? 'active' : '']].join(' ')}
+        className={[styles['optimal'], styles['sort-button'], styles[optimal ? 'active' : '']].join(' ')}
       >Оптимальный</button>
     </li>
   </ul>

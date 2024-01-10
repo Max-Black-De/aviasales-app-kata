@@ -1,4 +1,4 @@
-import './filter-box.scss'
+import style from'./filter-box.module.scss'
 import { useSelector, useDispatch } from 'react-redux';
 import { changeFilter } from '../../store/slices/checkBoxSlice';
 
@@ -12,32 +12,32 @@ function FilterBox() {
   }
 
   return(
-    <aside className='filter-box'>
-      <h2 className='filter-box__title'>количество пересадок</h2>
-      <form className='filter-box__checkbox'>
-        <label className='filter-box__checkbox-item item-all'>
-          <input checked={all} name='ALL'  type='checkbox' onChange={(e) => onDispatchChangeFilter(e)} />
-          <span className='filter-box__span-item'></span>
+    <aside className={style['filter-box']}>
+      <h2 className={style['filter-box__title']}>количество пересадок</h2>
+      <form className={style['filter-box__checkbox']}>
+        <label className={style['filter-box__checkbox-item']}>
+          <input className={style['box-input']} checked={all} name='ALL'  type='checkbox' onChange={(e) => onDispatchChangeFilter(e)} />
+          <span className={style['filter-box__span-item']}></span>
           Все 
         </label>
-        <label className='filter-box__checkbox-item item-noConnection'>
-          <input checked={no} name='NO' type='checkbox' onChange={(e) => onDispatchChangeFilter(e)} />
-          <span className='filter-box__span-item'></span>
+        <label className={style['filter-box__checkbox-item']}>
+          <input className={style['box-input']} checked={no} name='NO' type='checkbox' onChange={(e) => onDispatchChangeFilter(e)} />
+          <span className={style['filter-box__span-item']}></span>
           Без пересадок
         </label>
-        <label className='filter-box__checkbox-item item-oneConnection'>
-          <input checked={one} name='ONE' type='checkbox' onChange={(e) => onDispatchChangeFilter(e)} />
-          <span className='filter-box__span-item'></span>
+        <label className={style['filter-box__checkbox-item']}>
+          <input className={style['box-input']} checked={one} name='ONE' type='checkbox' onChange={(e) => onDispatchChangeFilter(e)} />
+          <span className={style['filter-box__span-item']}></span>
           1 пересадка
         </label>
-        <label className='filter-box__checkbox-item item-twoConnection'>
-          <input checked={two} name='TWO' type='checkbox' onChange={(e) => onDispatchChangeFilter(e)} />
-          <span className='filter-box__span-item'></span>
+        <label className={style['filter-box__checkbox-item']} >
+          <input className={style['box-input']} checked={two} name='TWO' type='checkbox' onChange={(e) => onDispatchChangeFilter(e)} />
+          <span className={style['filter-box__span-item']}></span>
           2 пересадки 
         </label>
-        <label className='filter-box__checkbox-item item-threeConnection'>
-          <input checked={three} name='THREE' type='checkbox' onChange={(e) => onDispatchChangeFilter(e)} />
-          <span className='filter-box__span-item'></span>
+        <label className={style['filter-box__checkbox-item']}>
+          <input className={style['box-input']} checked={three} name='THREE' type='checkbox' onChange={(e) => onDispatchChangeFilter(e)} />
+          <span className={style['filter-box__span-item']}></span>
           3 пересадки
         </label>
       </form>
